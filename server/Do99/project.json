@@ -1,0 +1,27 @@
+{
+  "project_type": "javascript",
+  "debugMode": 1,
+  "showFPS": false,
+  "frameRate": 60,
+  "noCache": false,
+  "id": "gameCanvas",
+  "renderMode": 0,
+  "engineDir": "frameworks/cocos2d-html5",
+  "modules": [
+    "cocos2d",
+    "extensions",
+    "cocostudio",
+    "spine",
+    "chipmunk",
+    "ccui",
+    "editbox",
+    "external"
+  ],
+  "jsList": [
+    "src/utils.js",
+    "src/resource.js",
+    "src/SplashScene.js"
+  ],
+  "version": "2.4.10",
+  "isNew": false
+}
