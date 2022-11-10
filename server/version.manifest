@@ -1,1 +1,6 @@
-{"packageUrl":"http://10.2.2.10:7879/remote-assets/","remoteManifestUrl":"http://10.2.2.10:7879/remote-assets/project.manifest","remoteVersionUrl":"http://10.2.2.10:7879/remote-assets/version.manifest","version":"1.0.1"}
+{
+    "packageUrl": "http://10.2.2.19:7879/remote-assets/",
+    "remoteManifestUrl": "http://10.2.2.19:7879/remote-assets/project.manifest",
+    "remoteVersionUrl": "http://10.2.2.19:7879/remote-assets/version.manifest",
+    "version": "1.0.4"
+}

@@ -27,9 +27,12 @@ exports.onAfterBuild = function (options, result) {
     if (fs.existsSync(path.join(result.dest, 'data'))) {
         resdir = 'data';
     }
-
-    let cmd = `node version_generator.js -v 1.0.0 -u http://${getIPAdress()}:${remote_port}/ -s ${path.join(result.dest, resdir)} -d ${path.join(Editor.Project.path, "assets")}`    
+    console.warn(`ip: ${getIPAdress()}`);
+    console.warn(`ssssssssssssssss: ${path.join(result.dest, resdir)}`);
+    console.warn(`dddddddddddddddd: ${path.join(Editor.Project.path, "assets")}`);
+    let cmd = `node version_generator.js -v 1.0.0 -u http://${getIPAdress()}:${remote_port}/remote-assets/ -s ${path.join(result.dest, resdir)} -d ${path.join(Editor.Project.path, "assets")}`    
     console.warn(cmd);
+    
 
     exec(cmd, { cwd: Editor.Project.path }, (err, stdout, stderr) => {
         if (!err) return;

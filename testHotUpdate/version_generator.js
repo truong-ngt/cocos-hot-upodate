@@ -3,9 +3,9 @@ var path = require('path');
 var crypto = require('crypto');
 
 var manifest = {
-    packageUrl: 'http://127.0.0.1:3000',
-    remoteManifestUrl: 'http://127.0.0.1:3000/project.manifest',
-    remoteVersionUrl: 'http://127.0.0.1:3000/version.manifest',
+    packageUrl: 'http://127.0.0.1:5000',
+    remoteManifestUrl: 'http://127.0.0.1:5000/project.manifest',
+    remoteVersionUrl: 'http://127.0.0.1:5000/version.manifest',
     version: '1.0.0',
     assets: {},
     searchPaths: []

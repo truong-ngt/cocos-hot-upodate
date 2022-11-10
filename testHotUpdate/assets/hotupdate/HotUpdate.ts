@@ -7,15 +7,11 @@ const jsb = (<any>window).jsb;
 // 2. res/raw-assets/2d/2d86a854-63c4-4b90-8b88-a4328b8526c2.png
 // So when custom manifest used, you should be able to find them in downloaded remote assets
 var customManifestStr = JSON.stringify({
-    "packageUrl": "http://10.2.2.10:3000/remote-assets/",
-    "remoteManifestUrl": "http://10.2.2.10:3000/remote-assets/project.manifest",
-    "remoteVersionUrl": "http://10.2.2.10:3000/remote-assets/version.manifest",
+    "packageUrl": "http://10.2.2.19:7879/remote-assets/",
+    "remoteManifestUrl": "http://10.2.2.19:7879/remote-assets/project.manifest",
+    "remoteVersionUrl": "http://10.2.2.19:7879/remote-assets/version.manifest",
     "version": "1.0.1",
     "assets": {
-        "src/resource.js": {
-            "size": 5514,
-            "md5": "d09753aaed7c55c4566cecf766cbc5c3"
-        },
         // "src/cocos-js/ammo-instantiated-45eaa448.js": {
         //     "size": 2318381,
         //     "md5": "081a863c98742000893bca3bb87c1775"
@@ -141,10 +137,15 @@ export class HotUpdate extends Component {
     private versionCompareHandle: (versionA: string, versionB: string) => number = null!;
 
     checkCb(event: any) {
-        console.log('Code: ' + event.getEventCode());
+        console.log('Code 1 1: ' + event.getEventCode());
+        console.log('here 4');
+        console.log('alooooo', this._am.getStoragePath())
+        console.log('blooooo', event.getAssetsManagerEx())
+        console.log('blooooo', this._am.getRemoteManifest().getVersionFileUrl())
+        console.log('blooooo', this._am.getRemoteManifest().parseFile)
         switch (event.getEventCode()) {
-            case jsb.EventAssetsManager.ERROR_NO_LOCAL_MANIFEST:
-                this.panel.info.string = "No local manifest file found, hot update skipped.";
+        case jsb.EventAssetsManager.ERROR_NO_LOCAL_MANIFEST:
+            this.panel.info.string = "No local manifest file found, hot update skipped.";
                 break;
             case jsb.EventAssetsManager.ERROR_DOWNLOAD_MANIFEST:
             case jsb.EventAssetsManager.ERROR_PARSE_MANIFEST:
@@ -172,6 +173,7 @@ export class HotUpdate extends Component {
     updateCb(event: any) {
         var needRestart = false;
         var failed = false;
+        console.log('here 1');
         switch (event.getEventCode()) {
             case jsb.EventAssetsManager.ERROR_NO_LOCAL_MANIFEST:
                 this.panel.info.string = 'No local manifest file found, hot update skipped.';
@@ -204,6 +206,7 @@ export class HotUpdate extends Component {
                 needRestart = true;
                 break;
             case jsb.EventAssetsManager.UPDATE_FAILED:
+                console.log('============= event.getMessage()', event.getMessage())
                 this.panel.info.string = 'Update failed. ' + event.getMessage();
                 this.panel.retryBtn.active = true;
                 this._updating = false;
@@ -247,6 +250,8 @@ export class HotUpdate extends Component {
     }
 
     loadCustomManifest() {
+        console.log('here 3');
+
         if (this._am.getState() === jsb.AssetsManager.State.UNINITED) {
             var manifest = new jsb.Manifest(customManifestStr, this._storagePath);
             this._am.loadLocalManifest(manifest, this._storagePath);
@@ -265,6 +270,10 @@ export class HotUpdate extends Component {
     }
 
     checkUpdate() {
+        // this.panel.info1.string = 'this.manifestUrl.nativeUrl'
+        console.log('here 2');
+        this.panel.byteLabel.string = this.manifestUrl.nativeUrl;
+
         if (this._updating) {
             this.panel.info.string = 'Checking or updating ...';
             return;
@@ -278,6 +287,7 @@ export class HotUpdate extends Component {
             return;
         }
         this._am.setEventCallback(this.checkCb.bind(this));
+        console.log('hehehe 2');
 
         this._am.checkUpdate();
         this._updating = true;
