@@ -53,7 +53,8 @@ app.get('/assets/main/native/80/800f94fd-7424-4202-9629-d3ca77f3b72d.manifest', 
   // require('child_process').exec('start "" "E:\\codeTest\\expressjs\\cacao"');
 // });
 
-app.use('/remote-assets', express.static('./test/assets'))
+// app.use('/remote-assets', express.static('./test/assets'))
+app.use('/remote-assets', express.static('./Do99'))
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
