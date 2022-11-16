@@ -30,7 +30,10 @@ exports.onAfterBuild = function (options, result) {
     console.warn(`ip: ${getIPAdress()}`);
     console.warn(`ssssssssssssssss: ${path.join(result.dest, resdir)}`);
     console.warn(`dddddddddddddddd: ${path.join(Editor.Project.path, "assets")}`);
-    let cmd = `node version_generator.js -v 1.0.0 -u http://${getIPAdress()}:${remote_port}/remote-assets/ -s ${path.join(result.dest, resdir)} -d ${path.join(Editor.Project.path, "assets")}`    
+    // let cmd = `node version_generator.js -v 1.0.0 -u http://${getIPAdress()}:${remote_port}/remote-assets/ -s ${path.join(result.dest, resdir)} -d ${path.join(Editor.Project.path, "assets")}` 
+    let cmd = `node version_generator.js -v 1.0.0 -u http://${getIPAdress()}:${remote_port}/remote-assets/ -s D:\\DEV\\cocos-hot-upodate\\server\\macao -d ${path.join(Editor.Project.path, "assets")}`    
+
+    // let cmd = `node version_generator.js -v 1.0.0 -u http://${getIPAdress()}:${remote_port}/remote-assets/ -s  D:\\DEV\\cocos-hot-upodate\\server\\Do99\\frameworks\\runtime-src\\proj.android\\app -d ${path.join(Editor.Project.path, "assets")}`    
     console.warn(cmd);
     
 

@@ -24,7 +24,7 @@ app.get('/remote-assets/version.manifest', function(req, res){
 
 app.get('/remote-assets/project.manifest', function(req, res){
   // const file = `${__dirname}/project.manifest`;
-  const file = `${__dirname}/800f94fd-7424-4202-9629-d3ca77f3b72d.manifest`;
+  const file = `${__dirname}/project.manifest`;
   res.download(file); // Set disposition and send it.
 });
 
@@ -53,7 +53,8 @@ app.get('/assets/main/native/80/800f94fd-7424-4202-9629-d3ca77f3b72d.manifest', 
   // require('child_process').exec('start "" "E:\\codeTest\\expressjs\\cacao"');
 // });
 
-app.use('/remote-assets', express.static('./test/assets'))
+// app.use('/remote-assets', express.static('./test/assets'))
+app.use('/remote-assets', express.static('./macao'))
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -97,7 +97,8 @@ var mkdirSync = function (path) {
     }
 }
 
-// Iterate assets and src folder
+// Iterate assets and src folder]
+console.log('====================== src', src);
 readDir(path.join(src, 'src'), manifest.assets);
 readDir(path.join(src, 'assets'), manifest.assets);
 readDir(path.join(src, 'jsb-adapter'), manifest.assets);

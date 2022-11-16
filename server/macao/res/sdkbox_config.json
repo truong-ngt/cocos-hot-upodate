@@ -1,0 +1,16 @@
+{
+    "android": {
+        "Firebase": {}, 
+        "Facebook": {
+            "debug": false
+        }
+    }, 
+    "ios": {
+        "Firebase": {}, 
+        "Facebook": {
+            "debug":true,
+    		"app_id":"1976338612567045",
+    		"url_scheme_suffix":""
+        }
+    }
+}

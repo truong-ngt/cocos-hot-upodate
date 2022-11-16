@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>168152570023-cv3ckg33o38avjlesojn0i7su289eic0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.168152570023-cv3ckg33o38avjlesojn0i7su289eic0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBj1TqWHIKiCgaHg44JSDaQRgyykdaIeVw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>168152570023</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.macaoufo.invasion</string>
+	<key>PROJECT_ID</key>
+	<string>ufoinvacion</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ufoinvacion.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:168152570023:ios:8c03fc6c75cceb55f06382</string>
+</dict>
+</plist>
